@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('votes/allVotes', 'VoteController@allVotes');
+
+Route::post('votes/makeVote', 'VoteController@makeVote');
+
+Route::get('/votes/detailVote', function (Request $request) {
+    return "detailVote";
+});
+
+Route::get('/votes/detailResult', function (Request $request) {
+    return "detailResult";
 });

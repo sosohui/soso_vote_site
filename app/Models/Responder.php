@@ -21,4 +21,8 @@ class Responder extends Model
         'answer_id', 'vote_content_id', 'vote_id', 'responder' 
     ];
 
+    public function answer(){
+        return $this->belongsTo('App\Models\VoteContent');
+    }
+
 }

@@ -24,6 +24,10 @@ class VoteContent extends Model
         'vote_id', 'question', 
     ];
 
+    public function vote(){
+        return $this->belongsTo('App\Models\Vote');
+    }
+
     public function answers()
     {
         return $this->hasMany('App\Models\Answer');

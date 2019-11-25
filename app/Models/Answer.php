@@ -23,6 +23,9 @@ class Answer extends Model
         'vote_id', 'vote_content_id','answer' 
     ];
 
+    public function voteContent(){
+        return $this->belongsTo('App\Models\VoteContent');
+    }
     
     public function responders()
     {
