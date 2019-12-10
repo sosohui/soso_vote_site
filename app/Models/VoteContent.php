@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class VoteContent extends Model
 {
     //
-    private $table = 'vote_contents';
+    protected $table = 'vote_contents';
 
     public $timestamps = false;
 
-    private $primaryKey = ['vote_content_id', 'vote_id'];
+    protected $primaryKey = 'vote_id';
 
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -25,12 +26,12 @@ class VoteContent extends Model
     ];
 
     public function vote(){
-        return $this->belongsTo('App\Models\Vote');
+        return $this->belongsTo('App\Models\Vote','vote_id','vote_id');
     }
 
     public function answers()
     {
-        return $this->hasMany('App\Models\Answer');
+        return $this->hasMany('App\Models\Answer','vote_content_id','vote_content_id');
     }
 
 }
