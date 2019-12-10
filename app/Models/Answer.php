@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     //
+    protected $table = 'answers';
     
     public $timestamps = false;
 
-    private $primaryKey = ['answer_id', 'vote_content_id', 'vote_id'];
+    protected $primaryKey = 'answer_id';
 
 
     /**
@@ -24,11 +25,11 @@ class Answer extends Model
     ];
 
     public function voteContent(){
-        return $this->belongsTo('App\Models\VoteContent');
+        return $this->belongsTo('App\Models\VoteContent','vote_content_id','vote_content_id');
     }
     
     public function responders()
     {
-        return $this->hasMany('App\Models\Responder');
+        return $this->hasMany('App\Models\Responder','vote_content_id','vote_content_id');
     }
 }
