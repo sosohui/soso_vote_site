@@ -17,6 +17,9 @@ Route::get('votes/allVotes', 'VoteController@allVotes');
 
 Route::get('votes/voteInfo/{vote_id}', 'VoteController@voteInfo');
 
+Route::get('votes/answerInfo/{vote_id}', 'VoteController@answerInfo');
+
+
 Route::post('votes/makeVote', 'VoteController@makeVote');
 
 Route::get('/votes/detailVote', function (Request $request) {
