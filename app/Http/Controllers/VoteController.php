@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vote;
 use App\Models\VoteContent;
-use App\Models\Anser;
+use App\Models\Answer;
 
 class VoteController extends Controller
 {
@@ -15,11 +15,21 @@ class VoteController extends Controller
         return $votes;
     }
 
-    public function voteInfo($vote_id){
-        \Log::debug($vote_id);
-        $vote = VoteContent::find("001000")->answers;
-        \Log::debug($vote);
+    public function answerInfo($vote_id){
+        // \Log::debug($vote_id);
+        $answer = VoteContent::find($vote_id)->answers;
+        \Log::debug($answer);
+        return $answer;
     }
+
+    public function voteInfo($vote_id){
+        // \Log::debug($vote_id);
+        $vote = Vote::find($vote_id);
+        // \Log::debug($vote);
+        return $vote;
+    }
+
+
 
     public function makeVote(Request $request){
 
