@@ -13,6 +13,7 @@ class Vote extends Model
      */
 
     protected $primaryKey = 'vote_id';
+    
     public $incrementing = false;
 
     //무조건 값을 넣어야 하는 부분

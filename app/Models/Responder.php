@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Responder extends Model
 {
+    protected $table = 'responders';
+
     public $timestamps = false;
 
-    private $primaryKey = ['answer_id', 'vote_content_id', 'vote_id', 'responder'];
+    protected $primaryKey = 'responder_id';
+
 
 
     /**

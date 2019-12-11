@@ -19,6 +19,9 @@ Route::get('votes/voteInfo/{vote_id}', 'VoteController@voteInfo');
 
 Route::get('votes/answerInfo/{vote_id}', 'VoteController@answerInfo');
 
+Route::post('votes/checkVote', 'VoteController@checkVote');
+
+Route::post('votes/addAnswer', 'VoteController@addAnswer');
 
 Route::post('votes/makeVote', 'VoteController@makeVote');
 
